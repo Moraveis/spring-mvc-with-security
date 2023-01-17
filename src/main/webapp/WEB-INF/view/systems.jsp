@@ -7,12 +7,12 @@
     </head>
 
     <body>
-        <h2>Manager Home Page</h2>
+        <h2>Admin Home Page</h2>
 
         <hr/>
 
         <p>
-            Some info that only managers should be able to see.
+            Some info that only admins should be able to see.
         </p>
 
         <hr/>

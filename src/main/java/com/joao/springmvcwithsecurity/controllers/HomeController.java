@@ -15,4 +15,9 @@ public class HomeController {
     public String getLeaderPage() {
         return "leaders";
     }
+
+    @GetMapping("/systems")
+    public String getAdminPage() {
+        return "systems";
+    }
 }

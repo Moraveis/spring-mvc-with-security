@@ -18,7 +18,11 @@
         <hr/>
 
         <p>
-            <a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a> (Only for Manager peeps)
+            <a href="${pageContext.request.contextPath}/leaders">Leadership Page</a>
+        </p>
+
+        <p>
+            <a href="${pageContext.request.contextPath}/systems">Admin Page</a>
         </p>
 
         <hr/>
