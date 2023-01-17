@@ -51,6 +51,7 @@ public class SecurityConfig {
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll())
                 .logout(LogoutConfigurer::permitAll)
+                .exceptionHandling(configure -> configure.accessDeniedPage("/access-denied"))
                 .build();
     }
 
