@@ -15,15 +15,19 @@
             Role(s): <security:authentication property="principal.authorities"/>
         </p>
 
-        <hr/>
 
-        <p>
-            <a href="${pageContext.request.contextPath}/leaders">Leadership Page</a>
-        </p>
+        <security:authorize access="hasRole('MANAGER')">
+            <hr/>
+            <p>
+                <a href="${pageContext.request.contextPath}/leaders">Leadership Page</a>
+            </p>
+        </security:authorize>
 
-        <p>
-            <a href="${pageContext.request.contextPath}/systems">Admin Page</a>
-        </p>
+        <security:authorize access="hasRole('ADMIN')">
+            <p>
+                <a href="${pageContext.request.contextPath}/systems">Admin Page</a>
+            </p>
+        </security:authorize>
 
         <hr/>
 
