@@ -41,8 +41,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeRequests(configurer -> configurer.antMatchers("/css/**").permitAll().anyRequest().authenticated())
-                .formLogin(configurer -> configurer.loginPage("/showMyLoginPage").loginProcessingUrl("/authenticateTheUser").permitAll())
+                .authorizeRequests(configure ->
+                        configure.antMatchers("/css/**").permitAll()
+                                .antMatchers("/").hasRole("EMPLOYEE")
+                                .antMatchers("/leaders/**").hasRole("MANAGER")
+                                .antMatchers("/systems/**").hasRole("ADMIN"))
+                .formLogin(configure ->
+                        configure.loginPage("/showMyLoginPage")
+                                .loginProcessingUrl("/authenticateTheUser")
+                                .permitAll())
                 .logout(LogoutConfigurer::permitAll)
                 .build();
     }
